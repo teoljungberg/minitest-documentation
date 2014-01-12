@@ -1,6 +1,6 @@
 # Minitest::Documentation
 
-A documentation format for [minitest](/seattlerb/minitest)
+A documentation format for [minitest](https://github.com/seattlerb/minitest)
 
 ## Installation
 
@@ -15,6 +15,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install minitest-documentation
+
+## Requirements
+
+Minitest >= 5.0.0
 
 ## Usage
 
