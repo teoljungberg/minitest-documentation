@@ -6,6 +6,14 @@ module Minitest
     RED    = "#{ESC}31m"
     YELLOW = "#{ESC}33m"
 
+    def self.documentation!
+      @documentation = true
+    end
+
+    def self.documentation?
+      @documentation ||= false
+    end
+
     def record result
       color_code = case result.result_code
                    when "."
@@ -24,7 +32,6 @@ module Minitest
       io.puts test.
         sub("test_", "").
         gsub("_", " ")
-
       io.print NND
     end
 
