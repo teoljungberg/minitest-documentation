@@ -1,6 +1,6 @@
 # Minitest::Documentation
 
-TODO: Write a gem description
+A documentation format for [minitest](/seattlerb/minitest)
 
 ## Installation
 
@@ -18,11 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just pass `--documentation` as an argument while running your tests
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/minitest-documentation/fork )
+1. Fork it ( http://github.com/teoljungberg/minitest-documentation/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
