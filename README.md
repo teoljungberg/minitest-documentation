@@ -69,9 +69,9 @@ You have skipped tests. Run with --verbose for details.
 ```
 
 Aaaaand, it's colorized!
-`Pass` => Green
-`Skip` => Yellow
-`Fail` => Red
+- `Pass` => Green
+- `Skip` => Yellow
+- `Fail` => Red
 
 ## Contributing
 
