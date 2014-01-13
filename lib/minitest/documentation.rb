@@ -14,20 +14,30 @@ module Minitest
       @documentation ||= false
     end
 
-    def record result
-      color_code = case result.result_code
-                   when "."
-                     GREEN
-                   when "E", "F"
-                     RED
-                   when "S"
-                     YELLOW
-                   end
+    def self.color!
+      @color = true
+    end
 
+    def self.color?
+      @color ||= false
+    end
+
+    def record result
       output_klass_name result.class
       test = test_name result
 
-      io.print color_code
+      if self.class.color?
+        color_code = case result.result_code
+                     when "."
+                       GREEN
+                     when "E", "F"
+                       RED
+                     when "S"
+                       YELLOW
+                     end
+        io.print color_code
+      end
+
       io.print "  "
       io.puts stringify_test_name(test)
       io.print NND

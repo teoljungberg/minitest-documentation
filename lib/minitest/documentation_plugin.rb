@@ -5,6 +5,10 @@ module Minitest
     opts.on "--documentation", "Documentation formatter" do
       DocumentationReporter.documentation!
     end
+
+    opts.on "--color", "Colorize the output" do
+      DocumentationReporter.color!
+    end
   end
 
   def self.plugin_documentation_init options
