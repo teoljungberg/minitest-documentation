@@ -29,9 +29,7 @@ module Minitest
 
       io.print color_code
       io.print "  "
-      io.puts test.
-        sub("test_", "").
-        gsub("_", " ")
+      io.puts stringify_test_name(test)
       io.print NND
     end
 
@@ -47,6 +45,12 @@ module Minitest
 
     def test_name o
       o.instance_variable_get "@NAME"
+    end
+
+    def stringify_test_name test
+      test.
+        sub("test_", "").
+        gsub("_", " ")
     end
   end
 end
