@@ -44,12 +44,11 @@ module Minitest
     end
 
     private
-    attr_accessor :klass
 
     def output_klass_name k
-      if k != klass
-        self.klass = k
-        io.puts klass
+      if k != @klass
+        @klass = k
+        io.puts @klass
       end
     end
 
