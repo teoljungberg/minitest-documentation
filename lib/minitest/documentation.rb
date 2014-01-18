@@ -23,27 +23,35 @@ module Minitest
     end
 
     def record result
-      output_klass_name result.class
-      test = test_name result
+      output_klass_name result.class if self.class.documentation?
+      print_colorized_progress result if self.class.color?
 
-      if self.class.color?
-        color_code = case result.result_code
-                     when "."
-                       GREEN
-                     when "E", "F"
-                       RED
-                     when "S"
-                       YELLOW
-                     end
-        io.print color_code
+      if self.class.documentation?
+        test = test_name result
+        io.print "  "
+        io.puts stringify_test_name(test)
       end
-
-      io.print "  "
-      io.puts stringify_test_name(test)
       io.print NND
     end
 
     private
+
+    def color_code result
+      color_code = case result.result_code
+                   when "."
+                     GREEN
+                   when "E", "F"
+                     RED
+                   when "S"
+                     YELLOW
+                   end
+      color_code
+    end
+
+    def print_colorized_progress result
+      io.print color_code(result)
+      io.print result.result_code unless self.class.documentation?
+    end
 
     def output_klass_name k
       if k != @klass
