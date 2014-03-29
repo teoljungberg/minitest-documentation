@@ -31,7 +31,7 @@ module Minitest
         io.print "  "
         io.puts stringify_test_name(test)
       end
-      io.print NND
+      io.print NND if self.class.color?
     end
 
     private
@@ -54,6 +54,7 @@ module Minitest
     end
 
     def output_klass_name k
+      @klass ||= ""
       if k != @klass
         @klass = k
         io.puts @klass
