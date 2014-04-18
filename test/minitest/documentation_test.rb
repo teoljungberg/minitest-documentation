@@ -14,9 +14,9 @@ module Minitest
 
   class DocumentationFormatTest < Minitest::Test
     def setup
-      DocumentationReporter.documentation!
+      Documentation.documentation!
       ExampleTest.generate_tests!
-      self.reporter = DocumentationReporter.new StringIO.new("")
+      self.reporter = Documentation.new StringIO.new("")
     end
     attr_accessor :reporter
 

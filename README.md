@@ -22,7 +22,8 @@ Minitest >= 5.0.0
 
 ## Usage
 
-Just pass `--documentation` as an argument while running your tests
+Just pass `--documentation` as an argument while running your tests.
+Or require `minitest/documentation` in your tests.
 
 ## What's the difference?
 
