@@ -1,18 +1,8 @@
-require 'minitest/autorun'
-require 'stringio'
+require_relative 'test_case'
 require 'minitest/documentation'
 
 module Minitest
-  ExampleTest = Class.new(Test) {
-    i_suck_and_my_tests_are_order_dependent!
-    def self.generate_tests!
-      define_method(:test_pass) { assert 'truthy' }
-      define_method(:test_fail) { refute 'truthy' }
-      define_method(:test_skip) { skip   'le skip' }
-    end
-  }
-
-  class DocumentationFormatTest < Minitest::Test
+  class DocumentationFormatTest < TestCase
     def setup
       Documentation.documentation!
       ExampleTest.generate_tests!
@@ -24,7 +14,7 @@ module Minitest
       ExampleTest.run reporter
 
       exp_format = <<-EOS
-Minitest::ExampleTest
+Minitest::TestCase::ExampleTest
   fail
   pass
   skip
