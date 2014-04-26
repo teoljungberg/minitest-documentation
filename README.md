@@ -69,12 +69,6 @@ Epic Fail!
 You have skipped tests. Run with --verbose for details.
 ```
 
-### Color
-If you add `--color` as an argument the output will be colorized
-- `pass` => Green
-- `skip` => Yellow
-- `fail` => Red
-
 ## Contributing
 
 1. Fork it ( http://github.com/teoljungberg/minitest-documentation/fork )

@@ -15,9 +15,9 @@ module Minitest
 
       exp_format = <<-EOS
 Minitest::TestCase::ExampleTest
-  fail
+  a very long sentence
   pass
-  skip
+  verbosity
       EOS
 
       assert_equal exp_format, reporter.io.string
