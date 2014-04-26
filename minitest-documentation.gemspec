@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "minitest-documentation"
-  spec.version       = "0.0.4"
+  spec.version       = "1.0.0"
   spec.authors       = ["Teo Ljungberg"]
   spec.email         = ["teo.ljungberg@gmail.com"]
   spec.summary       = %q{Rspec like documentation for Minitest}
