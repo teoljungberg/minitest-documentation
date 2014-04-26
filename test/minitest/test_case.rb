@@ -12,5 +12,9 @@ module Minitest
         define_method(:test_a_very_long_sentence) { assert 'truthy' }
       end
     }
+
+    def io
+      @io ||= StringIO.new
+    end
   end
 end

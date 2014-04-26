@@ -6,7 +6,7 @@ module Minitest
     def setup
       Documentation.documentation!
       ExampleTest.generate_tests!
-      self.reporter = Documentation.new StringIO.new("")
+      self.reporter = Documentation.new io
     end
     attr_accessor :reporter
 
@@ -20,7 +20,7 @@ Minitest::TestCase::ExampleTest
   verbosity
       EOS
 
-      assert_equal exp_format, reporter.io.string
+      assert_equal exp_format, io.string
     end
   end
 end
